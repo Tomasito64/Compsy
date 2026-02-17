@@ -4,8 +4,10 @@ Site vitrine local pour **Thomas Salanova** (psychologie du travail, conseil, fo
 
 ## Contenu
 
-- `site/index.html` : page d'accueil
+- `site/acceuil.html` : page d'accueil
 - `site/prestations.html` : page Prestations
+- `site/parcours.html` : page Parcours
+- `site/ressources.html` : page Ressources
 - `site/blog.html` : redirection vers le blog Substack
 - `site/contact.html` : page Contact + formulaire
 - `site/styles.css` : styles globaux
@@ -15,7 +17,7 @@ Site vitrine local pour **Thomas Salanova** (psychologie du travail, conseil, fo
 ### Methode simple (double clic)
 
 1. Ouvrir le dossier `site`.
-2. Double-cliquer sur `index.html`.
+2. Double-cliquer sur `acceuil.html`.
 
 ### Methode recommandee (serveur local)
 

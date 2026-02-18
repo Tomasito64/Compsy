@@ -347,6 +347,75 @@ h1 {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.article-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: #0f1a16;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+}
+
+.article-meta {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.7rem;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.article-excerpt {
+  color: #4a4a47;
+}
+
+.download-btn {
+  width: fit-content;
+  background: var(--deep);
+  color: #fff;
+  border: 1px solid var(--deep);
+  box-shadow: 0 12px 24px var(--shadow);
+}
+
+.download-btn:hover,
+.download-btn:focus {
+  transform: translateY(-2px);
+}
+
+.articles-grid {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.article-tile {
+  padding: 1.6rem;
+  border-radius: 18px;
+  border: 1px solid var(--mist);
+  background: #faf7f3;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.article-tile h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+@media (max-width: 980px) {
+  .article-tile {
+    grid-template-columns: 1fr;
+  }
+
+  .download-btn {
+    width: 100%;
+  }
+}
+
 .service-card:hover,
 .resource-card:hover {
   transform: translateY(-4px);
@@ -434,6 +503,53 @@ h1 {
 .contact-form textarea:focus {
   outline: 2px solid rgba(176, 139, 87, 0.35);
   border-color: var(--accent);
+}
+
+.email-btn {
+  background: #ffffff;
+  color: var(--deep);
+  border: 1px solid var(--mist);
+  box-shadow: 0 12px 24px var(--shadow);
+  justify-content: center;
+  width: 240px;
+}
+
+.email-btn:hover,
+.email-btn:focus {
+  transform: translateY(-2px);
+}
+
+.contact-actions {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.8rem;
+  justify-items: start;
+}
+
+.linkedin-btn {
+  gap: 0.6rem;
+  background: #0a66c2;
+  color: #fff;
+  border: 1px solid #0a5db0;
+  box-shadow: 0 12px 24px var(--shadow);
+  width: 240px;
+}
+
+.linkedin-btn:hover,
+.linkedin-btn:focus {
+  transform: translateY(-2px);
+}
+
+.linkedin-icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+}
+
+.linkedin-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
 }
 
 .site-footer {

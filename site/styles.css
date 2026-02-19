@@ -614,3 +614,18 @@ h1 {
     transition: none !important;
   }
 }
+
+.blog-tile {
+  margin-top: 1.2rem;
+  padding: 1.2rem;
+  border-radius: 16px;
+  border: 1px solid var(--mist);
+  background: #faf7f3;
+  display: grid;
+  gap: 1rem;
+}
+
+.blog-tile h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}

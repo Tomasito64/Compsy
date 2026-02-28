@@ -56,6 +56,12 @@ python -m http.server 8000
 
 Puis ouvrir : `http://localhost:8000`
 
+Astuce (1 commande) :
+
+```powershell
+.\preview.ps1
+```
+
 ## Mise en production (OVH mutualise via SFTP)
 
 Deploiement automatique via GitHub Actions (workflow `.github/workflows/deploy-ovh-sftp.yml`).

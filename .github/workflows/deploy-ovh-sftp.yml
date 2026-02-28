@@ -21,13 +21,10 @@ jobs:
           if [ -z "${{ secrets.SFTP_PASSWORD }}" ]; then echo "Missing SFTP_PASSWORD secret"; exit 1; fi
           if [ -z "${{ secrets.SFTP_PORT }}" ]; then echo "Missing SFTP_PORT secret"; exit 1; fi
 
-      - name: Upload site via SFTP
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USER }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          port: ${{ secrets.SFTP_PORT }}
-          source: "site/*"
-          target: "/home/cierifrssr/thomas"
-          strip_components: 1
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Upload site via SFTP (lftp)
+        shell: bash
+        run: |
+          lftp -e "set sftp:auto-confirm yes; set net:timeout 20; open -u '${{ secrets.SFTP_USER }}','${{ secrets.SFTP_PASSWORD }}' sftp://${{ secrets.SFTP_HOST }}:${{ secrets.SFTP_PORT }}; mirror -R --verbose site/ /home/cierifrssr/thomas; bye"

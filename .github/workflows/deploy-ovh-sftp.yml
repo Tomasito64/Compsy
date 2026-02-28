@@ -29,5 +29,5 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           port: ${{ secrets.SFTP_PORT }}
           source: "site/*"
-          target: "/thomas"
+          target: "/home/cierifrssr/thomas"
           strip_components: 1

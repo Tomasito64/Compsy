@@ -45,11 +45,22 @@ npx serve .
 - Remplacer `https://formspree.io/f/xxxxxxxx` par votre endpoint Formspree
 - Remplacer `https://example.com/` dans les balises `canonical` et `og:url`
 
-## Deploiement (OVH mutualise via SFTP)
+## Tests (preview local)
+
+Verifier le site en local avant de publier :
+
+```powershell
+cd C:\Users\thoma\Compsy\site
+python -m http.server 8000
+```
+
+Puis ouvrir : `http://localhost:8000`
+
+## Mise en production (OVH mutualise via SFTP)
 
 Deploiement automatique via GitHub Actions (workflow `.github/workflows/deploy-ovh-sftp.yml`).
 
-- Branche de deploiement : `V2`
+- Branche de deploiement : `main`
 - Dossier deploiement : `site/`
 - Cible OVH : `/home/cierifrssr/thomas`
 - Domaine : `https://thomas-salanova.fr`
@@ -63,4 +74,23 @@ Secrets a configurer dans l'environnement GitHub `production` :
 
 Le workflow utilise `lftp mirror -R --delete` pour synchroniser le contenu et
 effectue un smoke check sur `https://thomas-salanova.fr`.
+
+## Workflow Git (dev -> prod)
+
+- `V2` = branche de travail (developpement)
+- `main` = production (site en ligne)
+
+Etapes typiques :
+
+1. Travailler sur `V2`, puis `git add`, `git commit`, `git push`
+2. Quand c'est pret pour la prod : `git checkout main`
+3. `git merge V2`
+4. `git push` (declenche le deploiement)
+
+Pour voir ce qui va changer en prod :
+
+```powershell
+git log --oneline main..V2
+git diff main..V2
+```
 

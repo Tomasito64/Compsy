@@ -12,6 +12,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Verify secrets are present
+        shell: bash
+        run: |
+          if [ -z "${{ secrets.SFTP_HOST }}" ]; then echo "Missing SFTP_HOST secret"; exit 1; fi
+          if [ -z "${{ secrets.SFTP_USER }}" ]; then echo "Missing SFTP_USER secret"; exit 1; fi
+          if [ -z "${{ secrets.SFTP_PASSWORD }}" ]; then echo "Missing SFTP_PASSWORD secret"; exit 1; fi
+          if [ -z "${{ secrets.SFTP_PORT }}" ]; then echo "Missing SFTP_PORT secret"; exit 1; fi
+
       - name: Upload site via SFTP
         uses: appleboy/scp-action@v0.1.7
         with:

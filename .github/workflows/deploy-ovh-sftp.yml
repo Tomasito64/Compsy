@@ -3,7 +3,7 @@ name: Deploy to OVH (SFTP)
 on:
   push:
     branches:
-      - V2
+      - main
 
 jobs:
   deploy:

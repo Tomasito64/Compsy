@@ -27,4 +27,9 @@ jobs:
       - name: Upload site via SFTP (lftp)
         shell: bash
         run: |
-          lftp -e "set sftp:auto-confirm yes; set net:timeout 20; open -u '${{ secrets.SFTP_USER }}','${{ secrets.SFTP_PASSWORD }}' sftp://${{ secrets.SFTP_HOST }}:${{ secrets.SFTP_PORT }}; mirror -R --verbose site/ /home/cierifrssr/thomas; bye"
+          lftp -e "set sftp:auto-confirm yes; set net:timeout 20; open -u '${{ secrets.SFTP_USER }}','${{ secrets.SFTP_PASSWORD }}' sftp://${{ secrets.SFTP_HOST }}:${{ secrets.SFTP_PORT }}; mirror -R --verbose --delete site/ /home/cierifrssr/thomas; bye"
+
+      - name: Smoke check site
+        shell: bash
+        run: |
+          curl -fsSLI --max-time 20 https://thomas-salanova.fr > /dev/null

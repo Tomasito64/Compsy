@@ -1,57 +1,78 @@
-﻿# Compsy - Site vitrine
+# Compsy
 
-Site vitrine local pour **Thomas Salanova** (psychologie du travail, conseil, formation, analyse de donnees).
+Site vitrine statique pour **Thomas Salanova** autour de la psychologie du travail, de la formation, du conseil et de l'analyse de donnees.
 
-## Contenu
+## Structure du depot
 
-- `docs/acceuil.html` : page d'accueil
-- `docs/prestations.html` : page Prestations
-- `docs/parcours.html` : page Parcours
-- `docs/ressources.html` : page Ressources
-- `docs/blog-vulgarisation.html` : blog vulgarisation
-- `docs/contact.html` : page Contact + formulaire
-- `docs/styles.css` : styles globaux
+- `docs/` : version publiee du site, prevue pour un deploiement GitHub Pages
+- `site/` : seconde copie du site, proche de `docs/` mais pas strictement identique
+- `site astrig/` : dossier annexe avec un `index.html` isole
+- `docs/assets/` et `site/assets/` : logos et PDF telechargeables
+- `README.md` : documentation du projet
+
+## Pages principales
+
+Le site actuellement present dans `docs/` contient notamment :
+
+- `docs/index.html` : redirection vers `docs/accueil.html`
+- `docs/accueil.html` : page d'accueil principale
+- `docs/prestations.html` : offres et accompagnements
+- `docs/parcours.html` : parcours et experiences
+- `docs/ressources.html` : ressources
+- `docs/blog-vulgarisation.html` : page de blog / vulgarisation
+- `docs/articles-scientifiques.html` : publications scientifiques avec telechargement PDF
+- `docs/experience-scientifique.html` : experience scientifique
+- `docs/projets-data.html` : projets data
+- `docs/contact.html` : page contact
+- `docs/styles.css` : feuille de style globale
+- `docs/robots.txt` et `docs/sitemap.xml` : fichiers SEO
 
 ## Ouvrir le site en local
 
-### Methode simple (double clic)
+### Methode simple
 
-1. Ouvrir le dossier `docs`.
-2. Double-cliquer sur `acceuil.html`.
+Ouvrir `docs/accueil.html` directement dans un navigateur.
 
-### Methode recommandee (serveur local)
+### Methode recommandee
 
-> Permet d'eviter certains soucis de chargement et de navigation.
-
-Avec PowerShell :
+Depuis PowerShell :
 
 ```powershell
 cd C:\Users\thoma\Compsy\docs
 python -m http.server 8000
 ```
 
-Ensuite ouvrir : `http://localhost:8000`
+Puis ouvrir `http://localhost:8000`.
 
-Si `python` n'est pas disponible, on peut utiliser :
+Alternative si `python` n'est pas disponible :
 
 ```powershell
 cd C:\Users\thoma\Compsy\docs
 npx serve .
 ```
 
-## Personnalisation rapide
+## Points de configuration a finaliser
 
-- Remplacer `contact@example.com` dans `docs/contact.html`
-- Remplacer `https://formspree.io/f/xxxxxxxx` par votre endpoint Formspree
-- Remplacer `https://example.com/` dans les balises `canonical` et `og:url`
+Plusieurs valeurs du site sont encore des placeholders et doivent etre remplacees avant mise en ligne definitive :
 
-## Deploiement (GitHub Pages)
+- les URLs `https://example.com/...` dans les balises `canonical`, `og:url`, `robots.txt` et `sitemap.xml`
+- l'endpoint Formspree dans `docs/contact.html`
+- les eventuelles informations de contact a ajuster
 
-- Source : branche `main` + dossier `/docs`
-- Domaine : `thomas-salanova.fr` (fichier `docs/CNAME`)
-- DNS OVH : 
-  - A (apex `@`) : `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-  - CNAME `www` : `<ton-github-username>.github.io`
+## Deploiement
 
-Note : Active "Enforce HTTPS" dans `Settings → Pages` une fois le DNS propagé.
+Le depot est structure de maniere compatible avec **GitHub Pages** via le dossier `docs/`.
 
+- branche cible : `main`
+- dossier de publication : `/docs`
+- domaine personnalise : `thomas-salanova.fr` via `docs/CNAME`
+
+## Observations
+
+- `docs/` et `site/` partagent une grande partie des fichiers, mais au moins certaines pages HTML ne sont pas identiques
+- le point d'entree principal du site en production semble etre `docs/index.html`, qui redirige vers `docs/accueil.html`
+- l'ancienne URL `docs/acceuil.html` est conservee temporairement comme redirection de compatibilite
+
+## Limitation de verification
+
+Je n'ai pas pu verifier l'etat Git du depot avec `git status` car le repertoire est actuellement bloque par une erreur de type `dubious ownership` sur cette machine.

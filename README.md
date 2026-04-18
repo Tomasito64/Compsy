@@ -1,102 +1,85 @@
-﻿# Compsy - Site vitrine
+# Compsy
 
-Site vitrine local pour **Thomas Salanova** (psychologie du travail, conseil, formation, analyse de donnees).
+Site vitrine statique pour **Thomas Salanova** autour de la psychologie du travail, de la formation, du conseil et de l'analyse de donnees.
 
-## Contenu
+## Structure du depot
 
-- `site/acceuil.html` : page d'accueil
-- `site/prestations.html` : page Prestations
-- `site/parcours.html` : page Parcours
-- `site/ressources.html` : page Ressources
-- `site/blog-vulgarisation.html` : blog vulgarisation
-- `site/contact.html` : page Contact + formulaire
-- `site/styles.css` : styles globaux
+- `site/` : source actuellement deployee en production
+- `docs/` : copie annexe du site, encore presente dans le depot mais non utilisee pour la production OVH
+- `site astrig/` : dossier annexe avec un `index.html` isole
+- `site/assets/` et `docs/assets/` : logos et PDF telechargeables
+- `README.md` : documentation du projet
+
+## Pages principales
+
+Le site actuellement deployee en production dans `site/` contient notamment :
+
+- `site/index.html` : redirection vers `site/accueil.html`
+- `site/accueil.html` : page d'accueil principale
+- `site/prestations.html` : offres et accompagnements
+- `site/parcours.html` : parcours et experiences
+- `site/ressources.html` : ressources
+- `site/blog-vulgarisation.html` : page de blog / vulgarisation
+- `site/articles-scientifiques.html` : publications scientifiques avec telechargement PDF
+- `site/experience-scientifique.html` : experience scientifique
+- `site/projets-data.html` : projets data
+- `site/contact.html` : page contact
+- `site/styles.css` : feuille de style globale
 
 ## Ouvrir le site en local
 
-### Methode simple (double clic)
+### Methode simple
 
-1. Ouvrir le dossier `site`.
-2. Double-cliquer sur `acceuil.html`.
+Ouvrir `site/accueil.html` directement dans un navigateur.
 
-### Methode recommandee (serveur local)
+### Methode recommandee
 
-> Permet d'eviter certains soucis de chargement et de navigation.
-
-Avec PowerShell :
+Depuis PowerShell :
 
 ```powershell
 cd C:\Users\thoma\Compsy\site
 python -m http.server 8000
 ```
 
-Ensuite ouvrir : `http://localhost:8000`
+Puis ouvrir `http://localhost:8000`.
 
-Si `python` n'est pas disponible, on peut utiliser :
+Alternative si `python` n'est pas disponible :
 
 ```powershell
 cd C:\Users\thoma\Compsy\site
 npx serve .
 ```
 
-## Personnalisation rapide
+## Points de configuration a finaliser
 
-- Remplacer `contact@example.com` dans `site/contact.html`
-- Remplacer `https://formspree.io/f/xxxxxxxx` par votre endpoint Formspree
-- Remplacer `https://example.com/` dans les balises `canonical` et `og:url`
+Plusieurs valeurs du site sont encore des placeholders et doivent etre remplacees avant mise en ligne definitive :
 
-## Tests (preview local)
+- les URLs `https://example.com/...` dans les balises `canonical` et `og:url`
+- l'endpoint Formspree dans `site/contact.html`
+- les eventuelles informations de contact a ajuster
 
-Verifier le site en local avant de publier :
+## Deploiement
 
-```powershell
-cd C:\Users\thoma\Compsy\site
-python -m http.server 8000
-```
+Le deploiement de production se fait via le workflow GitHub Actions `.github/workflows/deploy-ovh-sftp.yml`.
 
-Puis ouvrir : `http://localhost:8000`
+- branche cible : `main`
+- dossier publie : `site/`
+- cible OVH : `/home/cierifrssr/thomas`
+- domaine : `https://thomas-salanova.fr`
 
-Astuce (1 commande) :
+## Workflow Git
 
-```powershell
-.\preview.ps1
-```
+- `main` = production
+- `V2` = branche de travail / preparation
 
-## Mise en production (OVH mutualise via SFTP)
+Flux recommande :
 
-Deploiement automatique via GitHub Actions (workflow `.github/workflows/deploy-ovh-sftp.yml`).
+1. travailler sur `V2`
+2. merger `V2` dans `main` quand c'est pret
+3. pousser `main` pour declencher le deploiement
 
-- Branche de deploiement : `main`
-- Dossier deploiement : `site/`
-- Cible OVH : `/home/cierifrssr/thomas`
-- Domaine : `https://thomas-salanova.fr`
+## Observations
 
-Secrets a configurer dans l'environnement GitHub `production` :
-
-- `SFTP_HOST` = `ftp.cluster120.hosting.ovh.net`
-- `SFTP_USER` = `cierifrssr`
-- `SFTP_PASSWORD` = (mot de passe SFTP)
-- `SFTP_PORT` = `22`
-
-Le workflow utilise `lftp mirror -R --delete` pour synchroniser le contenu et
-effectue un smoke check sur `https://thomas-salanova.fr`.
-
-## Workflow Git (dev -> prod)
-
-- `V2` = branche de travail (developpement)
-- `main` = production (site en ligne)
-
-Etapes typiques :
-
-1. Travailler sur `V2`, puis `git add`, `git commit`, `git push`
-2. Quand c'est pret pour la prod : `git checkout main`
-3. `git merge V2`
-4. `git push` (declenche le deploiement)
-
-Pour voir ce qui va changer en prod :
-
-```powershell
-git log --oneline main..V2
-git diff main..V2
-```
-
+- `docs/` et `site/` partagent une grande partie des fichiers, mais certaines pages HTML ne sont pas identiques
+- le point d'entree principal du site en production est `site/index.html`, qui redirige vers `site/accueil.html`
+- l'ancienne URL `site/acceuil.html` est conservee temporairement comme redirection de compatibilite

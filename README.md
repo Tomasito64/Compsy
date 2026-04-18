@@ -50,6 +50,26 @@ cd C:\Users\thoma\Compsy\site
 npx serve .
 ```
 
+### Previsualiser les changements depuis V2
+
+Pour travailler sur la branche de developpement et voir le site localement :
+
+```powershell
+git checkout V2
+cd C:\Users\thoma\Compsy\site
+python -m http.server 8000
+```
+
+Puis ouvrir `http://localhost:8000`.
+
+Pour comparer rapidement ce qui a change par rapport a la production (`main`) :
+
+```powershell
+git log --oneline main..V2
+git diff --stat main..V2
+git diff main..V2
+```
+
 ## Points de configuration a finaliser
 
 Plusieurs valeurs du site sont encore des placeholders et doivent etre remplacees avant mise en ligne definitive :

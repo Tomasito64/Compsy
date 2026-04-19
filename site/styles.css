@@ -441,6 +441,7 @@ h1 {
   width: 1.2rem;
 }
 
+
 .split {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

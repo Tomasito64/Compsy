@@ -20,7 +20,7 @@ Le site doit avoir :
 - des URLs coherentes
 - un domaine canonique stable
 
-Une bonne partie de ces points a deja ete corrigee sur `site/`. Il faut maintenant verifier que la version en ligne correspond bien a ce qui a ete pousse sur `main`.
+Une bonne partie de ces points a deja ete corrigee sur `site/`. Il faut maintenant verifier que la version en ligne correspond bien a ce qui a ete pousse sur `V2`.
 
 ### 2. Connecter le site a Google Search Console
 
@@ -144,4 +144,4 @@ Comme le site est statique, il part avec un avantage.
 
 ## Note pratique
 
-Le dossier de production du site est actuellement `site/`, et la branche de production est `main`.
+Le dossier de production du site est actuellement `site/`, et la branche de deploiement est `V2`.

@@ -4,41 +4,40 @@ Site vitrine statique pour **Thomas Salanova** autour de la psychologie du trava
 
 ## Structure du depot
 
-- `docs/` : version publiee du site, prevue pour un deploiement GitHub Pages
-- `site/` : seconde copie du site, proche de `docs/` mais pas strictement identique
-- `site astrig/` : dossier annexe avec un `index.html` isole
-- `docs/assets/` et `site/assets/` : logos et PDF telechargeables
+- `site/` : version actuellement deployee par le workflow GitHub Actions vers l'hebergement OVH
+- `Document/` : fichiers source PDF recopies ensuite dans les assets du site
+- `site/assets/` : logos et PDF telechargeables servis par le site
 - `README.md` : documentation du projet
 
 ## Pages principales
 
-Le site actuellement present dans `docs/` contient notamment :
+Le site actuellement present dans `site/` contient notamment :
 
-- `docs/index.html` : redirection vers `docs/accueil.html`
-- `docs/accueil.html` : page d'accueil principale
-- `docs/prestations.html` : offres et accompagnements
-- `docs/parcours.html` : parcours et experiences
-- `docs/ressources.html` : ressources
-- `docs/blog-vulgarisation.html` : page de blog / vulgarisation
-- `docs/articles-scientifiques.html` : publications scientifiques avec telechargement PDF
-- `docs/experience-scientifique.html` : experience scientifique
-- `docs/projets-data.html` : projets data
-- `docs/contact.html` : page contact
-- `docs/styles.css` : feuille de style globale
-- `docs/robots.txt` et `docs/sitemap.xml` : fichiers SEO
+- `site/index.html` : redirection vers `site/accueil.html`
+- `site/accueil.html` : page d'accueil principale
+- `site/prestations.html` : offres et accompagnements
+- `site/parcours.html` : parcours et experiences
+- `site/ressources.html` : ressources
+- `site/blog-vulgarisation.html` : page de blog / vulgarisation
+- `site/articles-scientifiques.html` : publications scientifiques avec telechargement PDF
+- `site/experience-scientifique.html` : experience scientifique
+- `site/projets-data.html` : projets data
+- `site/contact.html` : page contact
+- `site/styles.css` : feuille de style globale
+- `site/robots.txt` et `site/sitemap.xml` : fichiers SEO
 
 ## Ouvrir le site en local
 
 ### Methode simple
 
-Ouvrir `docs/accueil.html` directement dans un navigateur.
+Ouvrir `site/accueil.html` directement dans un navigateur.
 
 ### Methode recommandee
 
 Depuis PowerShell :
 
 ```powershell
-cd C:\Users\thoma\Compsy\docs
+cd C:\Users\thoma\Compsy\site
 python -m http.server 8000
 ```
 
@@ -47,7 +46,7 @@ Puis ouvrir `http://localhost:8000`.
 Alternative si `python` n'est pas disponible :
 
 ```powershell
-cd C:\Users\thoma\Compsy\docs
+cd C:\Users\thoma\Compsy\site
 npx serve .
 ```
 
@@ -56,23 +55,20 @@ npx serve .
 Plusieurs valeurs du site sont encore des placeholders et doivent etre remplacees avant mise en ligne definitive :
 
 - les URLs `https://example.com/...` dans les balises `canonical`, `og:url`, `robots.txt` et `sitemap.xml`
-- l'endpoint Formspree dans `docs/contact.html`
+- l'endpoint Formspree dans `site/contact.html`
 - les eventuelles informations de contact a ajuster
 
 ## Deploiement
 
-Le depot est structure de maniere compatible avec **GitHub Pages** via le dossier `docs/`.
+Le deploiement actif passe par GitHub Actions puis un envoi SFTP vers OVH a partir du dossier `site/`.
 
-- branche cible : `main`
-- dossier de publication : `/docs`
-- domaine personnalise : `thomas-salanova.fr` via `docs/CNAME`
+- branche cible : `V2`
+- dossier publie : `site/`
+- domaine cible : `https://thomas-salanova.fr`
 
 ## Observations
 
-- `docs/` et `site/` partagent une grande partie des fichiers, mais au moins certaines pages HTML ne sont pas identiques
-- le point d'entree principal du site en production semble etre `docs/index.html`, qui redirige vers `docs/accueil.html`
-- l'ancienne URL `docs/acceuil.html` est conservee temporairement comme redirection de compatibilite
-
-## Limitation de verification
-
-Je n'ai pas pu verifier l'etat Git du depot avec `git status` car le repertoire est actuellement bloque par une erreur de type `dubious ownership` sur cette machine.
+- `site/` est la source unique du site
+- le point d'entree principal du site deploie est `site/index.html`, qui redirige vers `site/accueil.html`
+- l'ancienne URL `acceuil.html` est conservee comme redirection de compatibilite
+- `Document/` contient les PDF source, recopies ensuite dans `site/assets/Documents/`

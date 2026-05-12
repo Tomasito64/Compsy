@@ -20,6 +20,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HN7LBWHMN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-5HN7LBWHMN');
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -51,16 +60,46 @@
             <p>Ressources, supports et contenus autour des formations proposees.</p>
           </div>
           <div class="articles-grid">
-            <article class="article-tile">
+            <article class="article-tile article-tile-expandable">
               <div class="article-icon" aria-hidden="true">
                 <span>Form.</span>
               </div>
-              <div>
-                <p class="article-meta">Formation</p>
-                <h2>Sensibilisation a la sante mentale</h2>
-                <p class="article-excerpt">Support de sensibilisation autour de la sante mentale au travail.</p>
-              </div>
-              <a class="btn download-btn" href="assets/Documents/Sensibilisation%20%C3%A0%20la%20sant%C3%A9%20mentale.pdf" download>T&eacute;l&eacute;charger</a>
+              <details class="resource-disclosure">
+                <summary>
+                  <div class="resource-disclosure-copy">
+                    <p class="article-meta">Formation</p>
+                    <h2>Sensibilisation a la sante mentale</h2>
+                    <p class="article-excerpt">Support de sensibilisation autour de la sante mentale au travail.</p>
+                    <span class="resource-disclosure-hint">Ouvrir les documents disponibles</span>
+                  </div>
+                  <span class="resource-disclosure-toggle" aria-hidden="true"></span>
+                </summary>
+                <div class="resource-downloads">
+                  <a class="download-option" href="assets/Documents/Sensibilisation%20%C3%A0%20la%20sant%C3%A9%20mentale.pdf" download>
+                    <span class="download-option-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" focusable="false">
+                        <path d="M7 3.75A1.75 1.75 0 0 1 8.75 2h5.69c.46 0 .9.18 1.23.51l3.82 3.82c.33.33.51.77.51 1.23v12.69A1.75 1.75 0 0 1 18.25 22h-9.5A1.75 1.75 0 0 1 7 20.25V3.75Zm7 .75v2.75c0 .41.34.75.75.75h2.75L14 4.5Zm-4.75 8.25a.75.75 0 0 0 0 1.5h5.5a.75.75 0 0 0 0-1.5h-5.5Zm0 3a.75.75 0 0 0 0 1.5h5.5a.75.75 0 0 0 0-1.5h-5.5Z"></path>
+                      </svg>
+                    </span>
+                    <span class="download-option-copy">
+                      <strong>PDF de sensibilisation</strong>
+                      <span>Telecharger le support complet</span>
+                    </span>
+                  </a>
+                  <a class="download-option" href="assets/Documents/Rapport%20OMS.pdf" download>
+                    <span class="download-option-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" focusable="false">
+                        <path d="M7 3.75A1.75 1.75 0 0 1 8.75 2h5.69c.46 0 .9.18 1.23.51l3.82 3.82c.33.33.51.77.51 1.23v12.69A1.75 1.75 0 0 1 18.25 22h-9.5A1.75 1.75 0 0 1 7 20.25V3.75Zm7 .75v2.75c0 .41.34.75.75.75h2.75L14 4.5Zm-4.75 8.25a.75.75 0 0 0 0 1.5h5.5a.75.75 0 0 0 0-1.5h-5.5Zm0 3a.75.75 0 0 0 0 1.5h5.5a.75.75 0 0 0 0-1.5h-5.5Z"></path>
+                      </svg>
+                    </span>
+                    <span class="download-option-copy">
+                      <strong>Rapport OMS</strong>
+                      <span>Telecharger le rapport de l'Organisation mondiale de la sante</span>
+                    </span>
+                  </a>
+                  <!-- Dupliquez un bloc .download-option ici pour ajouter d'autres documents. -->
+                </div>
+              </details>
             </article>
           </div>
         </div>

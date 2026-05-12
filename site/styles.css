@@ -351,6 +351,16 @@ h1 {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.resource-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-card .btn {
+  margin-top: 1.35rem;
+  align-self: flex-start;
+}
+
 .article-icon {
   width: 64px;
   height: 64px;
@@ -410,6 +420,128 @@ h1 {
   margin-bottom: 0.6rem;
 }
 
+.article-tile-expandable {
+  grid-template-columns: auto 1fr;
+}
+
+.resource-disclosure {
+  width: 100%;
+}
+
+.resource-disclosure summary {
+  list-style: none;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  cursor: pointer;
+}
+
+.resource-disclosure summary::-webkit-details-marker {
+  display: none;
+}
+
+.resource-disclosure-copy h2 {
+  margin-bottom: 0.6rem;
+}
+
+.resource-disclosure-hint {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.resource-disclosure-toggle {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--mist);
+  position: relative;
+  flex: 0 0 auto;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.resource-disclosure-toggle::before,
+.resource-disclosure-toggle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.95rem;
+  height: 2px;
+  background: var(--deep);
+  transform: translate(-50%, -50%);
+}
+
+.resource-disclosure-toggle::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.resource-disclosure[open] .resource-disclosure-toggle {
+  background: var(--sand);
+}
+
+.resource-disclosure[open] .resource-disclosure-toggle::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.resource-downloads {
+  margin-top: 1.4rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.download-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--mist);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.download-option:hover,
+.download-option:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(20, 20, 18, 0.08);
+  border-color: rgba(162, 98, 66, 0.35);
+}
+
+.download-option-icon {
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 14px;
+  background: var(--sand);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--deep);
+  flex: 0 0 auto;
+}
+
+.download-option-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: currentColor;
+}
+
+.download-option-copy {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.download-option-copy strong {
+  color: var(--deep);
+}
+
+.download-option-copy span {
+  color: #4a4a47;
+}
+
 @media (max-width: 980px) {
   .article-tile {
     grid-template-columns: 1fr;
@@ -417,6 +549,10 @@ h1 {
 
   .download-btn {
     width: 100%;
+  }
+
+  .resource-disclosure summary {
+    gap: 1rem;
   }
 }
 

@@ -39,6 +39,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--clay); outline
 .nav-frame { width: min(calc(100% - 3rem), var(--max)); min-height: 76px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .brand { display: inline-flex; align-items: center; gap: 0.75rem; font-weight: 700; letter-spacing: -0.04em; }
 .brand-mark { display: grid; place-items: center; width: 31px; height: 31px; border: 1px solid var(--ink); border-radius: 50%; font: 500 0.68rem var(--mono); letter-spacing: -0.08em; }
+.brand-logo { width: 36px; height: 36px; flex: 0 0 auto; }
 .brand-sub { display: block; margin-top: 0.1rem; color: var(--ink-soft); font: 0.62rem var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
 .site-nav { display: flex; align-items: center; gap: 1.25rem; font-size: 0.9rem; }
 .site-nav a:not(.nav-cta) { padding: 0.4rem 0; border-bottom: 1px solid transparent; }

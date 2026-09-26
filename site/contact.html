@@ -14,6 +14,12 @@
     <meta property="og:title" content="Contact | Thomas Salanova">
     <meta property="og:description" content="Contact pour conseil, formation ou analyse de données.">
     <meta property="og:url" content="https://thomas-salanova.fr/contact.html">
+    <meta property="og:image" content="https://thomas-salanova.fr/assets/og-thomas-salanova.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Thomas Salanova — Psychologie du travail et analyse de données">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://thomas-salanova.fr/assets/og-thomas-salanova.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,25 +35,32 @@
 
       gtag('config', 'G-5HN7LBWHMN');
     </script>
+    <script src="menu.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
 
     <header class="site-header">
       <div class="container header-inner">
-        <div class="brand">
+        <a class="brand" href="accueil.html" aria-label="Thomas Salanova - accueil">
           <span class="brand-mark">TS</span>
           <div class="brand-text">
             <strong>Thomas Salanova</strong>
-            <span>Docteur en psychologie sociale</span>
+            <span>Psychologie du travail &amp; analyse de données</span>
           </div>
-        </div>
-        <nav class="site-nav" aria-label="Navigation principale">
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="visually-hidden">Ouvrir le menu</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
           <a href="accueil.html">Accueil</a>
           <a href="prestations.html">Prestations</a>
           <a href="parcours.html">Parcours</a>
           <a href="ressources.html">Ressources</a>
-          <a href="contact.html" class="nav-cta active">Contact</a>
+          <a href="contact.html" class="nav-cta active" aria-current="page">Contact</a>
         </nav>
       </div>
     </header>
@@ -57,10 +70,19 @@
         <div class="container">
           <div class="panel">
             <h1>Contact</h1>
-            <p>Pour une demande de conseil, de formation ou d'analyse de données, écrivez-moi par e-mail ou retrouvez-moi sur LinkedIn. Je vous réponds rapidement.</p>
+            <p>Pour une demande de conseil, de formation ou d&apos;analyse de donn&eacute;es, pr&eacute;sentez-moi votre contexte par e-mail ou retrouvez-moi sur LinkedIn.</p>
             <p class="contact-meta">Bordeaux &bull; Interventions partout en France</p>
 
-            <div style="margin-top: 2rem;">
+            <div class="contact-topics" aria-labelledby="contact-topics-title">
+              <h2 id="contact-topics-title">Votre demande concerne</h2>
+              <div class="contact-topic-grid">
+                <a href="mailto:thomas.salanova@gmail.com?subject=Demande%20de%20conseil%20et%20d%27accompagnement"><strong>Conseil</strong><span>Diagnostic, RPS, QVCT, dynamiques collectives</span></a>
+                <a href="mailto:thomas.salanova@gmail.com?subject=Demande%20de%20formation"><strong>Formation</strong><span>Management, sant&eacute; au travail, changement</span></a>
+                <a href="mailto:thomas.salanova@gmail.com?subject=Demande%20d%27analyse%20de%20donn%C3%A9es"><strong>Analyse de donn&eacute;es</strong><span>Enqu&ecirc;tes, tableaux de bord, aide &agrave; la d&eacute;cision</span></a>
+              </div>
+            </div>
+
+            <div class="contact-details">
               <h2>Coordonnées</h2>
               <div class="contact-actions">
                 <a class="btn email-btn" href="mailto:thomas.salanova@gmail.com">thomas.salanova@gmail.com</a>
@@ -99,3 +121,4 @@
     </footer>
   </body>
 </html>
+

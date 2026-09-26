@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8">
@@ -14,6 +14,12 @@
     <meta property="og:title" content="Parcours | Thomas Salanova">
     <meta property="og:description" content="Parcours de Thomas Salanova, docteur en psychologie sociale.">
     <meta property="og:url" content="https://thomas-salanova.fr/parcours.html">
+    <meta property="og:image" content="https://thomas-salanova.fr/assets/og-thomas-salanova.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Thomas Salanova — Psychologie du travail et analyse de données">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://thomas-salanova.fr/assets/og-thomas-salanova.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,23 +35,30 @@
 
       gtag('config', 'G-5HN7LBWHMN');
     </script>
+    <script src="menu.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
 
     <header class="site-header">
       <div class="container header-inner">
-        <div class="brand">
+        <a class="brand" href="accueil.html" aria-label="Thomas Salanova - accueil">
           <span class="brand-mark">TS</span>
           <div class="brand-text">
             <strong>Thomas Salanova</strong>
-            <span>Docteur en psychologie sociale</span>
+            <span>Psychologie du travail &amp; analyse de données</span>
           </div>
-        </div>
-        <nav class="site-nav" aria-label="Navigation principale">
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="visually-hidden">Ouvrir le menu</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
           <a href="accueil.html">Accueil</a>
           <a href="prestations.html">Prestations</a>
-          <a href="parcours.html" class="active">Parcours</a>
+          <a href="parcours.html" class="active" aria-current="page">Parcours</a>
           <a href="ressources.html">Ressources</a>
           <a href="contact.html" class="nav-cta">Contact</a>
         </nav>
@@ -71,6 +84,13 @@
             </ul>
           </div>
         </div>
+        <div class="container resource-callout">
+          <div>
+            <h2>Une approche qui vous parle&nbsp;?</h2>
+            <p>Expliquez-moi votre contexte&nbsp;: nous identifierons ensemble le format d&apos;intervention le plus pertinent.</p>
+          </div>
+          <a class="btn primary" href="contact.html">Prendre contact</a>
+        </div>
       </section>
     </main>
 
@@ -92,6 +112,7 @@
     </footer>
   </body>
 </html>
+
 
 
 

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8">
@@ -14,10 +14,42 @@
     <meta property="og:title" content="Thomas Salanova | Psychologie du travail, conseil & data">
     <meta property="og:description" content="Conseil, formation et analyse de donnees en psychologie du travail. Bordeaux et interventions partout en France.">
     <meta property="og:url" content="https://thomas-salanova.fr/">
+    <meta property="og:image" content="https://thomas-salanova.fr/assets/og-thomas-salanova.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Thomas Salanova — Psychologie du travail et analyse de données">
 
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Thomas Salanova | Psychologie du travail, conseil & data">
     <meta name="twitter:description" content="Conseil, formation et analyse de donnees en psychologie du travail. Bordeaux et interventions partout en France.">
+    <meta name="twitter:image" content="https://thomas-salanova.fr/assets/og-thomas-salanova.png">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Thomas Salanova",
+        "url": "https://thomas-salanova.fr/",
+        "jobTitle": "Docteur en psychologie sociale du travail et des organisations, psychologue et data analyst",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bordeaux",
+          "addressCountry": "FR"
+        },
+        "areaServed": "France",
+        "knowsAbout": [
+          "Psychologie du travail",
+          "Psychologie des organisations",
+          "Risques psychosociaux",
+          "Qualité de vie et des conditions de travail",
+          "Analyse de données"
+        ],
+        "sameAs": [
+          "https://linkedin.com/in/thomas-salanova",
+          "https://thomassalanova.substack.com"
+        ]
+      }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,21 +65,28 @@
 
       gtag('config', 'G-5HN7LBWHMN');
     </script>
+    <script src="menu.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
 
     <header class="site-header">
       <div class="container header-inner">
-        <div class="brand">
+        <a class="brand" href="accueil.html" aria-label="Thomas Salanova - accueil">
           <span class="brand-mark">TS</span>
           <div class="brand-text">
             <strong>Thomas Salanova</strong>
-            <span>Docteur en psychologie sociale du travail et des organisations</span>
+            <span>Psychologie du travail &amp; analyse de données</span>
           </div>
-        </div>
-        <nav class="site-nav" aria-label="Navigation principale">
-          <a href="accueil.html" class="active">Accueil</a>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="visually-hidden">Ouvrir le menu</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+          <a href="accueil.html" class="active" aria-current="page">Accueil</a>
           <a href="prestations.html">Prestations</a>
           <a href="parcours.html">Parcours</a>
           <a href="ressources.html">Ressources</a>
@@ -61,31 +100,33 @@
         <div class="container hero-grid">
           <div class="hero-text">
             <p class="eyebrow">Psychologie &amp; Data</p>
-            <h1>Conseil, formation et analyse de donn&eacute;es pour transformer le travail et les organisations.</h1>
+            <h1>Comprendre le travail pour faire &eacute;voluer durablement les organisations.</h1>
             <div class="lead">
-              <p>Mon travail vise &agrave; &eacute;clairer et transformer les situations de travail, en renfor&ccedil;ant le lien entre exigences du travail et r&eacute;alit&eacute;s humaines.</p>
-              <p>Docteur en psychologie sociale du travail et des organisations, j&apos;interviens dans des contextes vari&eacute;s de travail (tensions d&apos;&eacute;quipe, d&eacute;sengagement, transformations) ainsi que dans des d&eacute;marches de pr&eacute;vention et d&apos;&eacute;volution des organisations.</p>
-              <p>J&apos;analyse les situations de travail en articulant psychologie, sciences du comportement et donn&eacute;es RH (absent&eacute;isme, turnover, enqu&ecirc;tes internes) pour comprendre pr&eacute;cis&eacute;ment ce qui se joue, au-del&agrave; des sympt&ocirc;mes visibles.</p>
-              <p>Les actions sont construites avec les personnes concern&eacute;es, au plus pr&egrave;s du terrain, afin qu&apos;elles soient appropri&eacute;es, pertinentes et durables.</p>
-              <p>J&apos;accompagne des organisations, publiques comme priv&eacute;es, &agrave; retrouver des fonctionnements collectifs plus justes, plus lisibles et plus efficaces.</p>
-              <p>J&apos;exerce en ind&eacute;pendant et m&apos;entoure, lorsque c&apos;est n&eacute;cessaire, de comp&eacute;tences compl&eacute;mentaires pour r&eacute;pondre au mieux aux enjeux rencontr&eacute;s.</p>
+              <p>J&apos;aide les organisations &agrave; comprendre leurs dynamiques humaines, &agrave; pr&eacute;venir les difficult&eacute;s de travail et &agrave; prendre des d&eacute;cisions mieux &eacute;clair&eacute;es.</p>
+              <p>Docteur en psychologie sociale du travail, psychologue du travail et data analyste, j&apos;associe observation du terrain, sciences du comportement et donn&eacute;es RH.</p>
             </div>
             <div class="hero-actions">
               <a class="btn primary" href="contact.html">Demander un &eacute;change</a>
-              <a class="btn ghost" href="https://thomassalanova.substack.com" target="_blank" rel="noreferrer">Lire le blog</a>
+              <a class="btn ghost" href="prestations.html">D&eacute;couvrir mes interventions</a>
             </div>
+            <ul class="trust-list" aria-label="Repères professionnels">
+              <li>Docteur en psychologie sociale du travail</li>
+              <li>Psychologue du travail</li>
+              <li>Data analyste</li>
+              <li>Bordeaux &bull; interventions en France</li>
+            </ul>
             <div class="hero-highlights">
               <div>
                 <span class="highlight-title">Conseil</span>
-                <span class="highlight-text">Diagnostic et conseil organisationnel, accompagnement au changement, sant&eacute; au travail.</span>
+                <span class="highlight-text">Comprendre une situation, poser un diagnostic et construire des pistes d&apos;action.</span>
               </div>
               <div>
                 <span class="highlight-title">Formation</span>
-                <span class="highlight-text">Des formations &agrave; destination des managers et des &eacute;quipes, disponibles sous formats existants ou con&ccedil;ues sur mesure en fonction des enjeux rencontr&eacute;s.</span>
+                <span class="highlight-text">Outiller les managers et les &eacute;quipes &agrave; partir de situations concr&egrave;tes.</span>
               </div>
               <div>
                 <span class="highlight-title">Data</span>
-                <span class="highlight-text">Analyses avanc&eacute;es pour d&eacute;cider avec fiabilit&eacute;.</span>
+                <span class="highlight-text">Transformer les donn&eacute;es RH en informations lisibles et utiles &agrave; la d&eacute;cision.</span>
               </div>
             </div>
           </div>
@@ -102,6 +143,45 @@
         </div>
       </section>
 
+      <section class="section situations-section">
+        <div class="container">
+          <div class="section-header section-header-wide">
+            <p class="eyebrow">Quand me solliciter&nbsp;?</p>
+            <h2>Des situations de travail &agrave; comprendre et &agrave; faire &eacute;voluer</h2>
+            <p>Mon intervention part de vos questions concr&egrave;tes, de votre contexte et des personnes concern&eacute;es.</p>
+          </div>
+          <div class="situation-grid">
+            <article class="situation-card">
+              <span class="situation-number">01</span>
+              <h3>Tensions ou d&eacute;sengagement</h3>
+              <p>Comprendre ce qui fragilise le collectif et retrouver des rep&egrave;res de fonctionnement partag&eacute;s.</p>
+            </article>
+            <article class="situation-card">
+              <span class="situation-number">02</span>
+              <h3>Transformation organisationnelle</h3>
+              <p>Anticiper les effets humains du changement et construire des modalit&eacute;s d&apos;accompagnement adapt&eacute;es.</p>
+            </article>
+            <article class="situation-card">
+              <span class="situation-number">03</span>
+              <h3>RPS et sant&eacute; au travail</h3>
+              <p>Objectiver les facteurs de risque et faire &eacute;merger des actions de pr&eacute;vention ancr&eacute;es dans le travail r&eacute;el.</p>
+            </article>
+            <article class="situation-card">
+              <span class="situation-number">04</span>
+              <h3>Donn&eacute;es RH difficiles &agrave; interpr&eacute;ter</h3>
+              <p>Croiser enqu&ecirc;tes, indicateurs et donn&eacute;es qualitatives pour mieux comprendre et d&eacute;cider.</p>
+            </article>
+          </div>
+          <div class="callout home-callout">
+            <div>
+              <h3>Votre situation ne rentre pas dans une case&nbsp;?</h3>
+              <p>Un premier &eacute;change permet de clarifier votre besoin et d&apos;identifier la forme d&apos;accompagnement pertinente.</p>
+            </div>
+            <a class="btn primary" href="contact.html">Parler de votre situation</a>
+          </div>
+        </div>
+      </section>
+
       <section class="section alt">
         <div class="container">
           <div class="section-header">
@@ -109,26 +189,26 @@
             <p>Quelques organisations avec lesquelles j&apos;ai collabor&eacute;.</p>
           </div>
           <div class="logo-grid">
-            <div class="logo-card"><img src="assets/logos/apdhes.png" alt="APDHES"></div>
-            <div class="logo-card"><img src="assets/logos/CHU-Bordeaux.jpg" alt="CHU Bordeaux"></div>
-            <div class="logo-card"><img src="assets/logos/diaconat.jfif" alt="Diaconat"></div>
-            <div class="logo-card"><img src="assets/logos/gironde.png" alt="Gironde"></div>
-            <div class="logo-card"><img src="assets/logos/groupe-la-poste.jpg" alt="Groupe La Poste"></div>
-            <div class="logo-card"><img src="assets/logos/Inserr.jpg" alt="Inserr"></div>
-            <div class="logo-card"><img src="assets/logos/LOGO-CAF-33.jpg" alt="CAF 33"></div>
-            <div class="logo-card"><img src="assets/logos/LOGO-CPAM.jpg" alt="CPAM"></div>
-            <div class="logo-card"><img src="assets/logos/LOGO-ENIT.jpg" alt="ENIT"></div>
-            <div class="logo-card"><img src="assets/logos/LOGO-SAINT-GOBAIN.jpg" alt="Saint-Gobain"></div>
-            <div class="logo-card"><img src="assets/logos/metro.png" alt="Metro"></div>
-            <div class="logo-card"><img src="assets/logos/ministere-des-armees.png" alt="Ministere Des Armees"></div>
-            <div class="logo-card"><img src="assets/logos/nouvelle-aquitaine.png" alt="Nouvelle Aquitaine"></div>
-            <div class="logo-card"><img src="assets/logos/posteurop.png" alt="Posteurop"></div>
-            <div class="logo-card"><img src="assets/logos/Synopsis2.png" alt="Synopsis 2"></div>
-            <div class="logo-card"><img src="assets/logos/total.jpg" alt="Total"></div>
-            <div class="logo-card"><img src="assets/logos/transfer.png" alt="Transfer"></div>
-            <div class="logo-card"><img src="assets/logos/univ-bordeaux.jfif" alt="Univ Bordeaux"></div>
-            <div class="logo-card"><img src="assets/logos/univ-toulouse.png" alt="Univ Toulouse"></div>
-            <div class="logo-card"><img src="assets/logos/vdbx.png" alt="Ville de Bordeaux"></div>
+            <div class="logo-card"><img src="assets/logos/apdhes.png" alt="APDHES" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/CHU-Bordeaux.jpg" alt="CHU Bordeaux" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/diaconat.jfif" alt="Diaconat" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/gironde.png" alt="Gironde" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/groupe-la-poste.jpg" alt="Groupe La Poste" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/Inserr.jpg" alt="Inserr" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/LOGO-CAF-33.jpg" alt="CAF 33" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/LOGO-CPAM.jpg" alt="CPAM" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/LOGO-ENIT.jpg" alt="ENIT" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/LOGO-SAINT-GOBAIN.jpg" alt="Saint-Gobain" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/metro.png" alt="Metro" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/ministere-des-armees.png" alt="Ministere Des Armees" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/nouvelle-aquitaine.png" alt="Nouvelle Aquitaine" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/posteurop.png" alt="Posteurop" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/Synopsis2.png" alt="Synopsis 2" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/total.jpg" alt="Total" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/transfer.png" alt="Transfer" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/univ-bordeaux.jfif" alt="Univ Bordeaux" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/univ-toulouse.png" alt="Univ Toulouse" loading="lazy" decoding="async"></div>
+            <div class="logo-card"><img src="assets/logos/vdbx.png" alt="Ville de Bordeaux" loading="lazy" decoding="async"></div>
           </div>
         </div>
       </section>
@@ -154,6 +234,7 @@
     </footer>
   </body>
 </html>
+
 
 
 

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8">
@@ -14,6 +14,12 @@
     <meta property="og:title" content="Blog & vulgarisation | Thomas Salanova">
     <meta property="og:description" content="Blog et vulgarisation de Thomas Salanova.">
     <meta property="og:url" content="https://thomas-salanova.fr/blog-vulgarisation.html">
+    <meta property="og:image" content="https://thomas-salanova.fr/assets/og-thomas-salanova.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Thomas Salanova — Psychologie du travail et analyse de données">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://thomas-salanova.fr/assets/og-thomas-salanova.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,24 +35,31 @@
 
       gtag('config', 'G-5HN7LBWHMN');
     </script>
+    <script src="menu.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
 
     <header class="site-header">
       <div class="container header-inner">
-        <div class="brand">
+        <a class="brand" href="accueil.html" aria-label="Thomas Salanova - accueil">
           <span class="brand-mark">TS</span>
           <div class="brand-text">
             <strong>Thomas Salanova</strong>
-            <span>Docteur en psychologie sociale</span>
+            <span>Psychologie du travail &amp; analyse de données</span>
           </div>
-        </div>
-        <nav class="site-nav" aria-label="Navigation principale">
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="visually-hidden">Ouvrir le menu</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
           <a href="accueil.html">Accueil</a>
           <a href="prestations.html">Prestations</a>
           <a href="parcours.html">Parcours</a>
-          <a href="ressources.html" class="active">Ressources</a>
+          <a href="ressources.html" class="active" aria-current="page">Ressources</a>
           <a href="contact.html" class="nav-cta">Contact</a>
         </nav>
       </div>
@@ -83,6 +96,10 @@
               <a class="btn download-btn" href="https://www.youtube.com/watch?v=xJO5GstqTSY&list=PLiRo0KD93h7x79sZPDg7ZJAU_UkOufeVd" target="_blank" rel="noreferrer">Voir la s&eacute;rie</a>
             </article>
           </div>
+          <div class="resource-callout">
+            <div><h2>Un sujet fait &eacute;cho &agrave; votre contexte&nbsp;?</h2><p>Je peux vous aider &agrave; le traduire en pistes d&apos;action adapt&eacute;es &agrave; votre organisation.</p></div>
+            <a class="btn primary" href="contact.html">En discuter</a>
+          </div>
         </div>
       </section>
     </main>
@@ -105,5 +122,6 @@
     </footer>
   </body>
 </html>
+
 
 

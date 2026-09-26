@@ -35,7 +35,6 @@
 
       gtag('config', 'G-5HN7LBWHMN');
     </script>
-    <script src="menu.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -49,19 +48,28 @@
             <span>Psychologie du travail &amp; analyse de données</span>
           </div>
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          <span class="visually-hidden">Ouvrir le menu</span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </button>
-        <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+        <nav class="site-nav desktop-nav" aria-label="Navigation principale">
           <a href="accueil.html">Accueil</a>
           <a href="prestations.html">Prestations</a>
           <a href="parcours.html">Parcours</a>
           <a href="ressources.html">Ressources</a>
           <a href="contact.html" class="nav-cta active" aria-current="page">Contact</a>
         </nav>
+        <details class="mobile-navigation">
+          <summary class="menu-toggle">
+            <span class="visually-hidden">Afficher ou masquer le menu</span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </summary>
+          <nav class="site-nav mobile-nav" aria-label="Navigation principale mobile">
+          <a href="accueil.html">Accueil</a>
+          <a href="prestations.html">Prestations</a>
+          <a href="parcours.html">Parcours</a>
+          <a href="ressources.html">Ressources</a>
+          <a href="contact.html" class="nav-cta active" aria-current="page">Contact</a>
+        </nav>
+        </details>
       </div>
     </header>
 

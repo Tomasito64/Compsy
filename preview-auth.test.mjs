@@ -5,7 +5,7 @@ import {tmpdir} from 'node:os';
 import path from 'node:path';
 import {createPreviewServer} from './preview-auth.mjs';
 
-test('Public pages remain open; formations and direct PDF URLs require authentication', async()=>{
+test('Training descriptions remain public; direct PDF URLs require authentication', async()=>{
   const root=await mkdtemp(path.join(tmpdir(),'compsy-auth-'));
   await writeFile(path.join(root,'accueil.html'),'PUBLIC');
   await writeFile(path.join(root,'formations.html'),'PRIVATE');
@@ -15,7 +15,8 @@ test('Public pages remain open; formations and direct PDF URLs require authentic
   const base=`http://127.0.0.1:${server.address().port}`;
   try {
     assert.equal((await fetch(base+'/accueil.html')).status,200);
-    for(const suffix of ['/formations.html','/cours.pdf','/cours%2Epdf?download=1']) {
+    assert.equal((await fetch(base+'/formations.html')).status,200);
+    for(const suffix of ['/cours.pdf','/cours%2Epdf?download=1']) {
       const denied=await fetch(base+suffix);
       assert.equal(denied.status,401);
       assert.ok(denied.headers.get('www-authenticate'));

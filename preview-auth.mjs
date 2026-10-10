@@ -24,7 +24,7 @@ export function createPreviewServer({root, username, password}) {
       if (relative.startsWith('..') || path.isAbsolute(relative) || relative.split(path.sep).some(p=>p.startsWith('.'))) {
         res.writeHead(404); return res.end();
       }
-      const protectedFile = path.extname(file).toLowerCase() === '.pdf' || path.basename(file).toLowerCase() === 'formations.html';
+      const protectedFile = path.extname(file).toLowerCase() === '.pdf';
       if (protectedFile) {
         const provided = Buffer.from(req.headers.authorization || '');
         if (provided.length !== expected.length || !timingSafeEqual(provided, expected)) {

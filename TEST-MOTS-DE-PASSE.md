@@ -2,7 +2,7 @@
 
 Cette expérience est limitée à la branche `V2`. Aucun changement du site publié, des PDF ou du workflow OVH. Le serveur d'aperçu écoute uniquement sur cet ordinateur.
 
-Le site public reste consultable. Dans cet aperçu, la page `formations.html` et tous les PDF du dossier `site` demandent un identifiant et un mot de passe, y compris via leurs liens directs. Les autres ressources publiques restent accessibles.
+Le site public reste consultable. Dans cet aperçu, seuls les PDF du dossier `site` demandent un identifiant et un mot de passe, y compris via leurs liens directs. La page Formations, ses titres et descriptions restent accessibles sans connexion.
 
 ## Essayer sous PowerShell
 
@@ -15,7 +15,7 @@ $env:PREVIEW_PASSWORD = $credential.GetNetworkCredential().Password
 node preview-auth.mjs
 ```
 
-Ouvrir http://127.0.0.1:8766/formations.html et saisir les identifiants choisis. Le navigateur affiche sa fenêtre de connexion standard. Arrêter le serveur avec Ctrl+C, puis effacer la variable : `Remove-Item Env:PREVIEW_PASSWORD`. Fermer la fenêtre privée utilisée pour l'essai pour oublier l'authentification mémorisée par le navigateur.
+Ouvrir http://127.0.0.1:8766/formations.html : les présentations sont publiques. Cliquer sur un PDF, puis saisir les identifiants choisis. Le navigateur affiche sa fenêtre de connexion standard. Arrêter le serveur avec Ctrl+C, puis effacer la variable : `Remove-Item Env:PREVIEW_PASSWORD`. Fermer la fenêtre privée utilisée pour l'essai pour oublier l'authentification mémorisée par le navigateur.
 
 Tests automatisés : `node --test preview-auth.test.mjs`.
 

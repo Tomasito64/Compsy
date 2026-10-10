@@ -1057,3 +1057,23 @@ h1, h2, h3 { color: var(--deep); }
   .brand-text strong { font-size: 0.98rem; }
   .brand-text > span { font-size: 0.67rem; }
 }
+
+/* Accès aux trois offres depuis l'accueil. */
+.home-services { padding: 0 0 1rem; }
+.home-service-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.5rem; }
+.home-service-card { display:flex; flex-direction:column; align-items:flex-start; padding:2rem; border:1px solid var(--mist); border-radius:20px; background:#fffdf9; box-shadow:0 10px 24px rgba(24,61,67,.05); }
+.home-service-icon { display:inline-flex; align-items:center; justify-content:center; width:64px; height:64px; border-radius:18px; background:#edf3ef; color:var(--accent); margin-bottom:1.2rem; }
+.home-service-card h3 { font-size:1.8rem; line-height:1.15; margin-bottom:.9rem; }
+.home-service-card p { color:#4a4a47; margin-bottom:1.5rem; }
+.home-service-card a { margin-top:auto; padding:.5rem 0; color:var(--accent); font-size:.88rem; font-weight:600; text-decoration:underline; text-underline-offset:4px; }
+.home-service-card a:hover { color:var(--deep); }
+.home-service-card a:focus-visible { outline:2px solid var(--accent); outline-offset:5px; border-radius:2px; }
+.service-card[id] { scroll-margin-top:130px; }
+@media(max-width:760px) { .home-service-grid { grid-template-columns:1fr; } .home-service-card { padding:1.6rem; } }
+
+.home-intro { max-width:900px; }
+.home-context { padding:2rem 0 0; }
+.home-context .card-inner { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:2rem; }
+.home-context .card-title { grid-row:1; margin:0; }
+.home-context .card-value { grid-row:2; }
+@media(max-width:760px) { .home-context .card-inner { display:block; } .home-context .card-title:not(:first-child) { margin-top:1.5rem; } }

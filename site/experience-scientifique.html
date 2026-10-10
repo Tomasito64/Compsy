@@ -1,6 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
+    <link rel="icon" href="favicon.ico?v=coquelicot" sizes="16x16 32x32 48x48">
+    <link rel="icon" type="image/png" href="favicon.png?v=coquelicot" sizes="48x48">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=coquelicot">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,18 +11,24 @@
     <title>Exp&eacute;riences scientifiques | Thomas Salanova</title>
     <meta name="description" content="Exp&eacute;riences scientifiques de Thomas Salanova.">
     <meta name="robots" content="index,follow">
-    <link rel="canonical" href="https://example.com/experience-scientifique.html">
+    <link rel="canonical" href="https://thomas-salanova.fr/experience-scientifique.html">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Exp&eacute;riences scientifiques | Thomas Salanova">
     <meta property="og:description" content="Exp&eacute;riences scientifiques de Thomas Salanova.">
-    <meta property="og:url" content="https://example.com/experience-scientifique.html">
+    <meta property="og:url" content="https://thomas-salanova.fr/experience-scientifique.html">
+    <meta property="og:image" content="https://thomas-salanova.fr/assets/og-thomas-salanova.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Thomas Salanova — Psychologie du travail et analyse de données">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://thomas-salanova.fr/assets/og-thomas-salanova.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20261010-coquelicot">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HN7LBWHMN"></script>
     <script>
@@ -35,20 +44,35 @@
 
     <header class="site-header">
       <div class="container header-inner">
-        <div class="brand">
-          <span class="brand-mark">TS</span>
+        <a class="brand" href="accueil.html" aria-label="Thomas Salanova - accueil">
+          <img class="brand-logo" src="logo-coquelicot.png" width="64" height="64" alt="" decoding="async">
           <div class="brand-text">
             <strong>Thomas Salanova</strong>
-            <span>Docteur en psychologie sociale</span>
+            <span>Psychologie sociale, du travail &amp; analyse de données</span>
           </div>
-        </div>
-        <nav class="site-nav" aria-label="Navigation principale">
+        </a>
+        <nav class="site-nav desktop-nav" aria-label="Navigation principale">
           <a href="accueil.html">Accueil</a>
           <a href="prestations.html">Prestations</a>
           <a href="parcours.html">Parcours</a>
-          <a href="ressources.html" class="active">Ressources</a>
+          <a href="ressources.html" class="active" aria-current="page">Ressources</a>
           <a href="contact.html" class="nav-cta">Contact</a>
         </nav>
+        <details class="mobile-navigation">
+          <summary class="menu-toggle">
+            <span class="visually-hidden">Afficher ou masquer le menu</span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </summary>
+          <nav class="site-nav mobile-nav" aria-label="Navigation principale mobile">
+          <a href="accueil.html">Accueil</a>
+          <a href="prestations.html">Prestations</a>
+          <a href="parcours.html">Parcours</a>
+          <a href="ressources.html" class="active" aria-current="page">Ressources</a>
+          <a href="contact.html" class="nav-cta">Contact</a>
+        </nav>
+        </details>
       </div>
     </header>
 
@@ -57,7 +81,7 @@
         <div class="container">
           <div class="section-header">
             <h1>Exp&eacute;riences scientifiques</h1>
-            <p>Nous proposons ici de tr&egrave;s courtes exp&eacute;riences scientifiques en ligne. Les r&eacute;sultats de ces exp&eacute;riences sont consultables &agrave; tout moment par les participants. La participation est anonyme et permet, au-del&agrave; de lire des explications, de se confronter &agrave; nos biais cognitifs et autres processus psychologiques.</p>
+            <p>Je propose ici de tr&egrave;s courtes exp&eacute;riences scientifiques en ligne. Les r&eacute;sultats de ces exp&eacute;riences sont consultables &agrave; tout moment par les participants. La participation est anonyme et permet, au-del&agrave; de lire des explications, de se confronter &agrave; nos biais cognitifs et autres processus psychologiques.</p>
           </div>
           <div class="articles-grid">
             <article class="article-tile">
@@ -73,6 +97,10 @@
               <a class="btn download-btn" href="https://y-sunflower.github.io/questionnaire/" target="_blank" rel="noreferrer">Participer</a>
             </article>
           </div>
+          <div class="resource-callout">
+            <div><h2>Comprendre les biais pour mieux d&eacute;cider</h2><p>Ces m&eacute;canismes peuvent aussi &ecirc;tre explor&eacute;s en formation et dans l&apos;analyse des pratiques de travail.</p></div>
+            <a class="btn primary" href="prestations.html">Voir les prestations</a>
+          </div>
         </div>
       </section>
     </main>
@@ -81,7 +109,7 @@
       <div class="container footer-inner">
         <div>
           <strong>Thomas Salanova</strong>
-          <span>Psychologie &amp; Data</span>
+          <span>Psychologie sociale, du travail &amp; analyse de données</span>
         </div>
         <div class="footer-links">
           <a href="accueil.html">Accueil</a>
@@ -95,5 +123,6 @@
     </footer>
   </body>
 </html>
+
 
 

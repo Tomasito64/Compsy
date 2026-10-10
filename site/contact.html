@@ -1,25 +1,34 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
+    <link rel="icon" href="favicon.ico?v=coquelicot" sizes="16x16 32x32 48x48">
+    <link rel="icon" type="image/png" href="favicon.png?v=coquelicot" sizes="48x48">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=coquelicot">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Contact | Thomas Salanova</title>
-    <meta name="description" content="Contacter Thomas Salanova pour du conseil, de la formation ou de l'analyse de donnees en psychologie du travail.">
+    <meta name="description" content="Contacter Thomas Salanova pour du conseil, de la formation ou de l'analyse de données en psychologie du travail.">
     <meta name="robots" content="index,follow">
-    <link rel="canonical" href="https://example.com/contact.html">
+    <link rel="canonical" href="https://thomas-salanova.fr/contact.html">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Contact | Thomas Salanova">
-    <meta property="og:description" content="Contact pour conseil, formation ou analyse de donnees.">
-    <meta property="og:url" content="https://example.com/contact.html">
+    <meta property="og:description" content="Contact pour conseil, formation ou analyse de données.">
+    <meta property="og:url" content="https://thomas-salanova.fr/contact.html">
+    <meta property="og:image" content="https://thomas-salanova.fr/assets/og-thomas-salanova.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Thomas Salanova — Psychologie du travail et analyse de données">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://thomas-salanova.fr/assets/og-thomas-salanova.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20261010-coquelicot">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HN7LBWHMN"></script>
     <script>
@@ -35,32 +44,57 @@
 
     <header class="site-header">
       <div class="container header-inner">
-        <div class="brand">
-          <span class="brand-mark">TS</span>
+        <a class="brand" href="accueil.html" aria-label="Thomas Salanova - accueil">
+          <img class="brand-logo" src="logo-coquelicot.png" width="64" height="64" alt="" decoding="async">
           <div class="brand-text">
             <strong>Thomas Salanova</strong>
-            <span>Docteur en psychologie sociale</span>
+            <span>Psychologie sociale, du travail &amp; analyse de données</span>
           </div>
-        </div>
-        <nav class="site-nav" aria-label="Navigation principale">
+        </a>
+        <nav class="site-nav desktop-nav" aria-label="Navigation principale">
           <a href="accueil.html">Accueil</a>
           <a href="prestations.html">Prestations</a>
           <a href="parcours.html">Parcours</a>
           <a href="ressources.html">Ressources</a>
-          <a href="contact.html" class="nav-cta active">Contact</a>
+          <a href="contact.html" class="nav-cta active" aria-current="page">Contact</a>
         </nav>
+        <details class="mobile-navigation">
+          <summary class="menu-toggle">
+            <span class="visually-hidden">Afficher ou masquer le menu</span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </summary>
+          <nav class="site-nav mobile-nav" aria-label="Navigation principale mobile">
+          <a href="accueil.html">Accueil</a>
+          <a href="prestations.html">Prestations</a>
+          <a href="parcours.html">Parcours</a>
+          <a href="ressources.html">Ressources</a>
+          <a href="contact.html" class="nav-cta active" aria-current="page">Contact</a>
+        </nav>
+        </details>
       </div>
     </header>
 
     <main id="contenu">
       <section class="section">
-        <div class="container split">
-          <div>
+        <div class="container">
+          <div class="panel">
             <h1>Contact</h1>
-            <p>Indiquez votre besoin, vos objectifs et vos d&eacute;lais. Je vous r&eacute;ponds rapidement.</p>
+            <p>Pour une demande de conseil, de formation ou d&apos;analyse de donn&eacute;es, pr&eacute;sentez-moi votre contexte par e-mail ou retrouvez-moi sur LinkedIn.</p>
             <p class="contact-meta">Bordeaux &bull; Interventions partout en France</p>
-            <div class="panel" style="margin-top: 2rem;">
-              <h2>Coordonn&eacute;es</h2>
+
+            <div class="contact-topics" aria-labelledby="contact-topics-title">
+              <h2 id="contact-topics-title">Votre demande concerne</h2>
+              <div class="contact-topic-grid">
+                <a href="mailto:thomas.salanova@gmail.com?subject=Demande%20de%20conseil%20et%20d%27accompagnement"><strong>Conseil</strong><span>Diagnostic, RPS, QVCT, dynamiques collectives</span></a>
+                <a href="mailto:thomas.salanova@gmail.com?subject=Demande%20de%20formation"><strong>Formation</strong><span>Management, sant&eacute; au travail, changement</span></a>
+                <a href="mailto:thomas.salanova@gmail.com?subject=Demande%20d%27analyse%20de%20donn%C3%A9es"><strong>Analyse de donn&eacute;es</strong><span>Enqu&ecirc;tes, tableaux de bord, aide &agrave; la d&eacute;cision</span></a>
+              </div>
+            </div>
+
+            <div class="contact-details">
+              <h2>Coordonnées</h2>
               <div class="contact-actions">
                 <a class="btn email-btn" href="mailto:thomas.salanova@gmail.com">thomas.salanova@gmail.com</a>
                 <a class="btn linkedin-btn" href="https://linkedin.com/in/thomas-salanova" target="_blank" rel="noreferrer" aria-label="LinkedIn Thomas Salanova">
@@ -74,31 +108,7 @@
                   LinkedIn
                 </a>
               </div>
-              <p class="fine">Remplacez par votre email professionnel.</p>
             </div>
-          </div>
-          <div class="panel">
-            <h2>Formulaire</h2>
-            <form class="contact-form" action="https://formspree.io/f/xxxxxxxx" method="POST">
-              <label>
-                Nom complet
-                <input type="text" name="name" required>
-              </label>
-              <label>
-                Email
-                <input type="email" name="email" required>
-              </label>
-              <label>
-                Organisation
-                <input type="text" name="company">
-              </label>
-              <label>
-                Votre message
-                <textarea name="message" rows="6" required></textarea>
-              </label>
-              <button class="btn primary" type="submit">Envoyer</button>
-              <p class="fine">Remplacez l'URL Formspree par votre endpoint.</p>
-            </form>
           </div>
         </div>
       </section>
@@ -108,7 +118,7 @@
       <div class="container footer-inner">
         <div>
           <strong>Thomas Salanova</strong>
-          <span>Psychologie &amp; Data</span>
+          <span>Psychologie sociale, du travail &amp; analyse de données</span>
         </div>
         <div class="footer-links">
           <a href="accueil.html">Accueil</a>
@@ -117,11 +127,9 @@
           <a href="ressources.html">Ressources</a>
           <a href="contact.html">Contact</a>
         </div>
-        <div class="footer-note">&copy; 2026 Thomas Salanova. Tous droits r&eacute;serv&eacute;s.</div>
+        <div class="footer-note">&copy; 2026 Thomas Salanova. Tous droits réservés.</div>
       </div>
     </footer>
   </body>
 </html>
-
-
 

@@ -1,6 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
+    <link rel="icon" href="favicon.ico?v=coquelicot" sizes="16x16 32x32 48x48">
+    <link rel="icon" type="image/png" href="favicon.png?v=coquelicot" sizes="48x48">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=coquelicot">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,18 +11,24 @@
     <title>Projets data | Thomas Salanova</title>
     <meta name="description" content="Projets data de Thomas Salanova.">
     <meta name="robots" content="index,follow">
-    <link rel="canonical" href="https://example.com/projets-data.html">
+    <link rel="canonical" href="https://thomas-salanova.fr/projets-data.html">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Projets data | Thomas Salanova">
     <meta property="og:description" content="Projets data de Thomas Salanova.">
-    <meta property="og:url" content="https://example.com/projets-data.html">
+    <meta property="og:url" content="https://thomas-salanova.fr/projets-data.html">
+    <meta property="og:image" content="https://thomas-salanova.fr/assets/og-thomas-salanova.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Thomas Salanova — Psychologie du travail et analyse de données">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://thomas-salanova.fr/assets/og-thomas-salanova.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20261010-coquelicot">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HN7LBWHMN"></script>
     <script>
@@ -35,20 +44,35 @@
 
     <header class="site-header">
       <div class="container header-inner">
-        <div class="brand">
-          <span class="brand-mark">TS</span>
+        <a class="brand" href="accueil.html" aria-label="Thomas Salanova - accueil">
+          <img class="brand-logo" src="logo-coquelicot.png" width="64" height="64" alt="" decoding="async">
           <div class="brand-text">
             <strong>Thomas Salanova</strong>
-            <span>Docteur en psychologie sociale</span>
+            <span>Psychologie sociale, du travail &amp; analyse de données</span>
           </div>
-        </div>
-        <nav class="site-nav" aria-label="Navigation principale">
+        </a>
+        <nav class="site-nav desktop-nav" aria-label="Navigation principale">
           <a href="accueil.html">Accueil</a>
           <a href="prestations.html">Prestations</a>
           <a href="parcours.html">Parcours</a>
-          <a href="ressources.html" class="active">Ressources</a>
+          <a href="ressources.html" class="active" aria-current="page">Ressources</a>
           <a href="contact.html" class="nav-cta">Contact</a>
         </nav>
+        <details class="mobile-navigation">
+          <summary class="menu-toggle">
+            <span class="visually-hidden">Afficher ou masquer le menu</span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </summary>
+          <nav class="site-nav mobile-nav" aria-label="Navigation principale mobile">
+          <a href="accueil.html">Accueil</a>
+          <a href="prestations.html">Prestations</a>
+          <a href="parcours.html">Parcours</a>
+          <a href="ressources.html" class="active" aria-current="page">Ressources</a>
+          <a href="contact.html" class="nav-cta">Contact</a>
+        </nav>
+        </details>
       </div>
     </header>
 
@@ -57,7 +81,7 @@
         <div class="container">
           <div class="section-header">
             <h1>Projets data</h1>
-            <p>Deux projets phares &agrave; d&eacute;couvrir.</p>
+            <p>Un aperçu de projets croisant psychologie, travail et données.</p>
           </div>
           <div class="articles-grid">
             <article class="article-tile article-tile-expandable">
@@ -83,7 +107,7 @@
                     </span>
                     <span class="download-option-copy">
                       <strong>L'essentiel</strong>
-                      <span>Telecharger le document</span>
+                      <span>Télécharger le document</span>
                     </span>
                   </a>
                   <a class="download-option" href="assets/Documents/Share/Manager%20par%20le%20sens.pdf" download>
@@ -94,7 +118,7 @@
                     </span>
                     <span class="download-option-copy">
                       <strong>Manager par le sens</strong>
-                      <span>Telecharger le document</span>
+                      <span>Télécharger le document</span>
                     </span>
                   </a>
                   <a class="download-option" href="assets/Documents/Share/Resistance%20to%20Change%20and%20Organizational%20Agility%20A%20Proposal%20for%20a%20Conceptual%20Research%20Model.pdf" download>
@@ -105,7 +129,7 @@
                     </span>
                     <span class="download-option-copy">
                       <strong>Resistance to Change and Organizational Agility</strong>
-                      <span>Telecharger le document</span>
+                      <span>Télécharger le document</span>
                     </span>
                   </a>
                   <a class="download-option" href="assets/Documents/Share/Sant%C3%A9%20Psychologique%20au%20travail.pdf" download>
@@ -115,8 +139,8 @@
                       </svg>
                     </span>
                     <span class="download-option-copy">
-                      <strong>Sante Psychologique au travail</strong>
-                      <span>Telecharger le document</span>
+                      <strong>Santé psychologique au travail</strong>
+                      <span>Télécharger le document</span>
                     </span>
                   </a>
                   <a class="download-option" href="assets/Documents/Share/synthese_deux_groupes_atelier1_avec_photos.pdf" download>
@@ -126,8 +150,8 @@
                       </svg>
                     </span>
                     <span class="download-option-copy">
-                      <strong>Synthese atelier 1</strong>
-                      <span>Telecharger le document</span>
+                      <strong>Synthèse atelier 1</strong>
+                      <span>Télécharger le document</span>
                     </span>
                   </a>
                   <a class="download-option" href="assets/Documents/Share/Transition%20num%C3%A9rique.pdf" download>
@@ -137,24 +161,20 @@
                       </svg>
                     </span>
                     <span class="download-option-copy">
-                      <strong>Transition numerique</strong>
-                      <span>Telecharger le document</span>
+                      <strong>Transition numérique</strong>
+                      <span>Télécharger le document</span>
                     </span>
                   </a>
                 </div>
               </details>
             </article>
-            <article class="article-tile">
-              <div class="article-icon" aria-hidden="true">
-                <span>TEO</span>
-              </div>
-              <div>
-                <p class="article-meta">Projet data</p>
-                <h2>TEO</h2>
-                <p class="article-excerpt">Description &agrave; compl&eacute;ter.</p>
-              </div>
-              <a class="btn download-btn" href="#">En savoir plus</a>
-            </article>
+          </div>
+          <div class="callout resource-callout">
+            <div>
+              <h2>Un projet d'analyse ou de valorisation de données&nbsp;?</h2>
+              <p>Je peux vous aider à structurer la question, analyser les données et rendre les résultats utiles à la décision.</p>
+            </div>
+            <a class="btn primary" href="contact.html">Parler de votre projet</a>
           </div>
         </div>
       </section>
@@ -164,7 +184,7 @@
       <div class="container footer-inner">
         <div>
           <strong>Thomas Salanova</strong>
-          <span>Psychologie &amp; Data</span>
+          <span>Psychologie sociale, du travail &amp; analyse de données</span>
         </div>
         <div class="footer-links">
           <a href="accueil.html">Accueil</a>
@@ -178,3 +198,4 @@
     </footer>
   </body>
 </html>
+

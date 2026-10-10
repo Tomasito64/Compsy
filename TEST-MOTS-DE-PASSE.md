@@ -15,7 +15,7 @@ $env:PREVIEW_PASSWORD = $credential.GetNetworkCredential().Password
 node preview-auth.mjs
 ```
 
-Ouvrir http://127.0.0.1:8766/formations.html : les présentations sont publiques. Cliquer sur un PDF, puis saisir les identifiants choisis. Le navigateur affiche sa fenêtre de connexion standard. Arrêter le serveur avec Ctrl+C, puis effacer la variable : `Remove-Item Env:PREVIEW_PASSWORD`. Fermer la fenêtre privée utilisée pour l'essai pour oublier l'authentification mémorisée par le navigateur.
+Ouvrir http://127.0.0.1:8766/formations.html : les présentations sont publiques. Cliquer sur un PDF, puis saisir les identifiants choisis. Une page de connexion affiche les champs Identifiant et Mot de passe. Une session locale d’une heure autorise ensuite les téléchargements. Arrêter le serveur avec Ctrl+C, puis effacer la variable : `Remove-Item Env:PREVIEW_PASSWORD`. Fermer la fenêtre privée utilisée pour l'essai pour effacer le cookie de session.
 
 Tests automatisés : `node --test preview-auth.test.mjs`.
 

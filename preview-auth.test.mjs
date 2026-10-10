@@ -16,16 +16,25 @@ test('Training descriptions remain public; direct PDF URLs require authenticatio
   try {
     assert.equal((await fetch(base+'/accueil.html')).status,200);
     assert.equal((await fetch(base+'/formations.html')).status,200);
+    const publicPage=await fetch(base+'/formations.html');
+    assert.equal(publicPage.status,200);
     for(const suffix of ['/cours.pdf','/cours%2Epdf?download=1']) {
-      const denied=await fetch(base+suffix);
-      assert.equal(denied.status,401);
-      assert.ok(denied.headers.get('www-authenticate'));
-      assert.equal((await fetch(base+suffix,{headers:{Authorization:'Basic invalid'}})).status,401);
-      const allowed=await fetch(base+suffix,{headers:{Authorization:'Basic '+Buffer.from('student:test-only-password').toString('base64')}});
-      assert.equal(allowed.status,200);
-      assert.equal(allowed.headers.get('cache-control'),'no-store');
+      const denied=await fetch(base+suffix,{redirect:'manual'});
+      assert.equal(denied.status,303);
+      const login=await fetch(base+denied.headers.get('location'));
+      assert.match(await login.text(),/Mot de passe/);
     }
-    assert.equal((await fetch(base+'/cours.pdf',{method:'HEAD'})).status,401);
+    const wrong=await fetch(base+'/connexion',{method:'POST',body:new URLSearchParams({username:'student',password:'wrong',next:'/cours.pdf'})});
+    assert.equal(wrong.status,401);
+    const login=await fetch(base+'/connexion',{method:'POST',redirect:'manual',body:new URLSearchParams({username:'student',password:'test-only-password',next:'/cours.pdf'})});
+    assert.equal(login.status,303);
+    assert.equal(login.headers.get('location'),'/cours.pdf');
+    const cookie=login.headers.get('set-cookie').split(';')[0];
+    const allowed=await fetch(base+'/cours.pdf',{headers:{Cookie:cookie}});
+    assert.equal(allowed.status,200);
+    assert.equal(await allowed.text(),'%PDF-test');
+    assert.match(allowed.headers.get('content-disposition'),/attachment/);
+    assert.equal((await fetch(base+'/cours.pdf',{method:'HEAD',redirect:'manual'})).status,303);
     assert.equal((await fetch(base+'/%2e%2e%5csecret.pdf')).status,400);
     assert.equal((await fetch(base+'/missing.pdf')).status,404);
   } finally { await new Promise(r=>server.close(r)); await rm(root,{recursive:true,force:true}); }

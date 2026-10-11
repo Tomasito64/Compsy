@@ -1,0 +1,55 @@
+name: Audit OVH en lecture seule (V2)
+on:
+  push:
+    branches: [V2]
+    paths: ['.github/workflows/audit-ovh-v2.yml']
+permissions:
+  contents: read
+jobs:
+  configuration:
+    if: github.ref == 'refs/heads/V2'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Installer le client SFTP
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+      - name: Lire la configuration uniquement
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_PORT: ${{ secrets.SFTP_PORT }}
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$SFTP_HOST" && test -n "$SFTP_PORT" && test -n "$SFTP_USER" && test -n "$SFTP_PASSWORD"
+          audit_dir=$(mktemp -d)
+          export AUDIT_DIR="$audit_dir"
+          cd "$audit_dir"
+          # Reuse the existing deployment's SFTP trust policy; never write remotely.
+          for item in global site htaccess; do
+            case "$item" in
+              global) remote='/home/cierifrssr/.ovhconfig';;
+              site) remote='/home/cierifrssr/thomas/.ovhconfig';;
+              htaccess) remote='/home/cierifrssr/thomas/.htaccess';;
+            esac
+            if lftp -u "$SFTP_USER,$SFTP_PASSWORD" "sftp://$SFTP_HOST:$SFTP_PORT" -e "set sftp:auto-confirm yes; set net:timeout 15; set net:max-retries 1; get $remote -o $item; bye" >/dev/null 2>&1; then
+              echo "$item: lecture réussie"
+            else
+              echo "$item: absent ou lecture impossible"
+            fi
+          done
+          python3 - <<'PY'
+          import os,pathlib
+          folder=pathlib.Path(os.environ['AUDIT_DIR'])
+          allowed={'app.engine','app.engine.version','environment','container.image','http.firewall'}
+          for name in ('global','site'):
+              p=folder/name
+              if p.exists():
+                  for line in p.read_text(errors='replace').splitlines():
+                      key,sep,value=line.partition('=')
+                      if sep and key.strip() in allowed:
+                          print(name+': '+key.strip()+'='+value.strip())
+          if not (folder/'global').exists() and not (folder/'site').exists():
+              raise SystemExit('Aucune configuration lue : accès SFTP ou fichiers à vérifier.')
+          PY

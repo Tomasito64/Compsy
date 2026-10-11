@@ -9,7 +9,7 @@ const record=s=>{const salt=randomBytes(16).toString('hex');return {salt,hash:di
 const matches=(s,r)=>!!r && timingSafeEqual(Buffer.from(digest(s,r.salt),'hex'),Buffer.from(r.hash,'hex'));
 const page=(title,body)=>`<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><link rel="stylesheet" href="/styles.css"><body><main style="max-width:780px;margin:auto;padding:28px 18px"><div class="panel"><img src="/logo-coquelicot.png" width="48" alt=""><h1>${esc(title)}</h1>${body}<p style="margin-top:24px"><a href="/formations.html">Retour aux formations</a></p></div></main></body></html>`;
 const hidden=(name,value)=>`<input type="hidden" name="${name}" value="${esc(value)}">`;
-const field=(label,name)=>`<label>${label}<input name="${name}" type="password" autocomplete="off" minlength="8" maxlength="128" required></label>`;
+const field=(label,name)=>`<label>${label}<input name="${name}" type="password" autocomplete="off" minlength="${name==='code'?4:8}" ${name==='code'?'inputmode="numeric" pattern="[0-9]{4,128}"':''} maxlength="128" required></label>`;
 const button=t=>`<button class="btn primary" type="submit">${t}</button>`;
 
 export async function createPreviewServer({root,adminPassword,dataFile,catalog}) {
@@ -58,12 +58,12 @@ export async function createPreviewServer({root,adminPassword,dataFile,catalog})
           if(form.get('csrf')!==session.csrf)return send(403,'Requête refusée');
           if(form.get('action')==='logout'){sessions.delete(token);return redirect('/admin');}
           const id=form.get('id'), code=form.get('code')||'';
-          if(!catalog.some(c=>c.id===id)||code.length<8||code.length>128)return send(400,'Choisissez un code de 8 à 128 caractères.');
+          if(!catalog.some(c=>c.id===id)||!/^[0-9]{4,128}$/.test(code))return send(400,'Choisissez un code de 4 à 128 chiffres.');
           const replacement=record(code);
           const save=saving.then(async()=>{const next={...codes,[id]:replacement};await mkdir(path.dirname(dataFile),{recursive:true});await writeFile(dataFile+'.tmp',JSON.stringify(next),{mode:0o600});await rename(dataFile+'.tmp',dataFile);codes=next;});
           saving=save.catch(()=>{});await save;return redirect('/admin?saved=1');
         }
-        return send(200,page('Codes des formations',`<p>Choisissez un code par formation et transmettez-le aux participants. Un nouveau code remplace immédiatement l’ancien. Les codes enregistrés ne sont pas affichés.</p>${url.searchParams.has('saved')?'<p role="status">Code enregistré.</p>':''}${catalog.map(c=>`<section style="padding:20px 0;border-bottom:1px solid #ddd"><h2>${esc(c.title)}</h2><p>${c.files.length} document(s) · ${codes[c.id]?'Code défini':'Aucun code : téléchargement fermé'}</p><form class="contact-form" method="post">${hidden('csrf',session.csrf)}${hidden('id',c.id)}${field('Nouveau code (8 caractères minimum)','code')}${button('Enregistrer le code')}</form></section>`).join('')}<form method="post" style="margin-top:24px">${hidden('csrf',session.csrf)}${hidden('action','logout')}${button('Se déconnecter')}</form>`));
+        return send(200,page('Codes des formations',`<p>Choisissez un code par formation et transmettez-le aux participants. Un nouveau code remplace immédiatement l’ancien. Les codes enregistrés ne sont pas affichés.</p>${url.searchParams.has('saved')?'<p role="status">Code enregistré.</p>':''}${catalog.map(c=>`<section style="padding:20px 0;border-bottom:1px solid #ddd"><h2>${esc(c.title)}</h2><p>${c.files.length} document(s) · ${codes[c.id]?'Code défini':'Aucun code : téléchargement fermé'}</p><form class="contact-form" method="post">${hidden('csrf',session.csrf)}${hidden('id',c.id)}${field('Nouveau code (4 chiffres minimum)','code')}${button('Enregistrer le code')}</form></section>`).join('')}<form method="post" style="margin-top:24px">${hidden('csrf',session.csrf)}${hidden('action','logout')}${button('Se déconnecter')}</form>`));
       }
       if(decoded==='/connexion') {
         let next=form?.get('next')||url.searchParams.get('next')||'';

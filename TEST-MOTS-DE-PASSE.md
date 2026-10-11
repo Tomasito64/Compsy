@@ -12,7 +12,7 @@ $env:PREVIEW_ADMIN_PASSWORD = $credential.GetNetworkCredential().Password
 node preview-auth.mjs
 ```
 
-Ouvrir http://127.0.0.1:8766/admin, saisir le mot de passe administrateur puis définir un code (8 caractères minimum) pour chaque formation. Sans code défini, ses téléchargements sont fermés. Les participants n’ont pas d’identifiant : ils saisissent uniquement le code transmis.
+Ouvrir http://127.0.0.1:8766/admin, saisir le mot de passe administrateur puis définir un code (4 chiffres minimum) pour chaque formation. Sans code défini, ses téléchargements sont fermés. Les participants n’ont pas d’identifiant : ils saisissent uniquement le code transmis.
 
 Un nouveau code révoque immédiatement les accès précédents à cette formation. Les sessions expirent après une heure. Dix échecs déclenchent une temporisation de cinq minutes. Bouton de déconnexion dans l’administration.
 
